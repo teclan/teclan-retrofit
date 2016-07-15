@@ -6,7 +6,7 @@ import teclan.retrofit.model.Pixiu;
 
 public interface PixiuService {
 
-    @GET("whitelist_policies")
+    @GET("/whitelist_policies")
     Call<Pixiu> getWhitelistPolicies();
 
 }

@@ -20,6 +20,20 @@ public interface PixiuService {
 ```
 则最后访问的完整URL为 http://127.0.0.1:3770/whitelist_policies,
 Call后面跟的是对象还是对象的List,具体看url返回值确定，http://127.0.0.1:3770/whitelist_policies返回的是一个对象，而不是链表。
+参看 ExampleHandle
+```Java
+ public String handle(Map<String, String> paramataersAndValues) {
+        return Body.whitelistPolicies;
+    }
+ ```
+ Body接口定义如下：
+ ```Java
+ public interface Body {
+    public String whitelistPolicies = "{\"whitelist_policies\":[{\"created_at\":\"2016-07-12 11:52:03\",\"description\":\"\",\"id\":1,"
+            + "\"keywords\":[\"white\"],\"match_mode\":\"EXACT\",\"name\":\"关键字白名单\",\"updated_at\":\"2016-07-12 11:52:03\"}],\"meta\":{\"total\":1}}";
+
+}
+ ```
 
 # 创建WebService
 具体参考 teclan-spark 项目
